@@ -1,0 +1,37 @@
+<div *ngIf="showFavourites">
+  <ion-list>
+    <ion-list-header>
+      Favourites
+    </ion-list-header>
+
+    <ng-container *ngFor="let item of favouriteList">
+      <ion-item>
+        <a href="javascript:void(0)" (click)="getDetail(item)">{{item.description}}</a>
+        <ion-icon name="close" (click)="remove(item)"></ion-icon>
+      </ion-item>
+    </ng-container>
+
+  </ion-list>
+
+
+  <ion-grid *ngIf="foodNutrients && foodNutrients.length > 0">
+    <ion-row>
+      <ion-card no-padding>
+        <ion-card-content class="cards" no-padding>
+          <ion-grid>
+            <ion-row *ngFor="let food of foodNutrients">
+              <ion-col col col-1>
+                {{food.nutrient.name}}
+              </ion-col>
+
+              <ion-col col col-2>
+                {{food.nutrient.number}} {{food.nutrient.unitName}}
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+
+    </ion-row>
+  </ion-grid>
+</div>

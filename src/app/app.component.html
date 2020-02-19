@@ -1,0 +1,41 @@
+<ion-app>
+
+  <ion-toolbar color=tertiary>
+    <ion-buttons slot="start">
+      <ion-menu-toggle>
+        <ion-button>
+          <ion-icon name="home"></ion-icon>
+        </ion-button>
+      </ion-menu-toggle>
+    </ion-buttons>
+    <ion-title>
+      Food Data Central
+    </ion-title>
+  </ion-toolbar>
+
+  <ion-content>
+
+    <ion-split-pane contentId="my-content">
+      <ion-menu side="start" contentId="my-content">
+        <ion-content>
+          <ion-list>
+            <ion-item [routerLink]="['/home']" routerLinkActive="active">Search Food</ion-item>
+          </ion-list>
+          <ion-list>
+            <ion-item [routerLink]="['/about']" routerLinkActive="active">About</ion-item>
+          </ion-list>
+          <ion-list>
+            <ion-item [routerLink]="['/contact']" routerLinkActive="active">Contact</ion-item>
+          </ion-list>
+          <ion-list>
+            <ion-item [routerLink]="['/favourites']" routerLinkActive="active">Favourites</ion-item>
+          </ion-list>
+
+        </ion-content>
+      </ion-menu>
+      <ion-router-outlet id="my-content"></ion-router-outlet>
+    </ion-split-pane>
+
+  </ion-content>
+
+</ion-app>

@@ -1,0 +1,8 @@
+$font20: 20px;
+
+.report-header h2, .report-header > ion-label {
+    padding-left: $font20;
+}
+ion-chip {
+    margin-left: $font20;
+}

@@ -1,0 +1,50 @@
+<ion-content padding class="content">
+  <h2>Welcome to Food Data Central!</h2>
+  <p>
+      FoodData Central is an integrated data system that provides expanded nutrient profile data and links to related agricultural and experimental research.
+  </p>
+ 
+  <ion-grid>
+        <ion-row>
+          <ion-col>
+                <ion-searchbar mode="ios" placeholder="Search" [(ngModel)]="searchQuery"></ion-searchbar>
+          </ion-col>
+          <ion-col>
+                <ion-button class="mT10"(click)="searchItem()">Result</ion-button>
+          </ion-col>
+        </ion-row>
+    </ion-grid>
+
+    <!-- Displaying the results -->
+
+
+          <ion-card no-padding *ngFor= "let food of foods" (click)="getDetailedInfo(food)">
+              <ion-card-header>
+                  <p> {{food.description}}</p>
+              </ion-card-header>
+          
+              <ion-card-content class="card" no-padding>
+                <ion-grid> 
+                  <ion-row>
+                      <ion-col>
+                        Brand Owner
+                      </ion-col>
+                      <ion-col>
+                        {{food.brandOwner ? food.brandOwner : 'N/A'}}
+                      </ion-col>
+                  </ion-row>
+                  <ion-row>
+                      <ion-col >
+                        Type
+                      </ion-col>
+                      <ion-col>
+                        {{food.dataType}}
+                      </ion-col>
+                  </ion-row>
+                </ion-grid>
+              </ion-card-content>
+            </ion-card>
+
+
+    
+</ion-content>

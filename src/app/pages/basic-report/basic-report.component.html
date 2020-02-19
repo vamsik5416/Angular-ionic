@@ -1,0 +1,33 @@
+
+<ion-content padding class="report-header">
+    <h2>{{description}}</h2>
+    <ion-label>Detailed Information</ion-label>
+
+    <ion-chip>
+        <ion-label (click)="addToFavourites()">Add to Favourites</ion-label>
+        <ion-icon name="star-outline"></ion-icon>
+    </ion-chip>  
+
+ <!-- Displaying the Detailed Information of the food items -->
+
+    <ion-grid>
+        <ion-row>
+            <ion-card no-padding>
+                <ion-card-content class="cards" no-padding>
+                    <ion-grid> 
+                        <ion-row *ngFor= "let food of foodNutrients">
+                            <ion-col col col-1>
+                                {{food.nutrient.name}}
+                            </ion-col>
+                            
+                            <ion-col col col-2>
+                                {{food.nutrient.number}} {{food.nutrient.unitName}}
+                            </ion-col>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card-content>
+                </ion-card>
+
+        </ion-row>
+    </ion-grid>          
+</ion-content>

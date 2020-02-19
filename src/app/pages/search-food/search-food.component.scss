@@ -1,0 +1,14 @@
+ion-card-header > p {
+    font-weight: bold;
+}
+ion-card:hover {
+    border: 1px solid #000;
+    background-color: #eee;
+    cursor: pointer;
+}
+::ng-deep .card ion-col {
+    font-size: 11px;
+}
+.content p, .content h2{
+    padding-left: 20px;
+}
